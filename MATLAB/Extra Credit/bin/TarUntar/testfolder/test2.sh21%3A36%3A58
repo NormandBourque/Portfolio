@@ -1,0 +1,10 @@
+#!/bin/sh
+
+for file in *
+	do
+		if grep -lq cool "$file"
+		then
+		echo "$file"
+		fi
+	done
+

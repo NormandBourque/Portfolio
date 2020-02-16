@@ -1,0 +1,201 @@
+;Main program
+start:	lodd on:		;loads on value into the acum
+	stod 4093
+	stod 4095		;places on the display
+	call xbsywt:		;busy wait for it to turn on.	
+	loco pt:		;loads the prompt to be transmitted
+	call nextw:		;transmit to screen
+	call input:		;get input from user
+	lodd bN:	;takes results and places them into sum
+	stod sum:
+	loco pt:		;promput for second number
+	call nextw:		;transimit message
+	call input:		;getting second number
+	lodd bN:	;load binary number just stored
+	addd sum:		;add previous sum
+	stod sum:		;store it into the sum
+	stod ans:		;store it into the answer
+	jneg oF:		;check for overflow
+	lodd zero:
+	stod 4094
+	loco asr:		;transmit message for answer
+	stod 4094
+	call nextw:
+	call itos:	;convert int to string
+	lodd zero:
+	halt
+;++++++++++++++++++++++++++++++++++++
+;overflow occured
+;++++++++++++++++++++++++++++++++++++
+oF:	loco error:
+	call nextw:
+	lodd cn1:
+	halt
+;++++++++++++++++++++++++++++++++++++
+;convert int to string and print done.
+;++++++++++++++++++++++++++++++++++++
+itos:	lodd cn1:
+	push
+	call compan:
+;neg 1 on stack still
+again:	lodd ans:	;cn10 	;devides twos complament anser by negative 10
+	push		;pushes to start 
+	lodd cn10:	;ans	;loades answer
+	push		;pushes it onto toe stack
+	lodd c1:	;if div is negative will stop
+	div		;puts answer on top and remander on bottom
+	jneg print:
+	pop		;popps off anser
+	stod temp:
+	pop
+	stod ans:	;ans	;stores answer
+;answer is now positive char needed to print on stack
+	;positive remander on stack
+	pop
+	pop
+	lodd temp:
+	push
+	jump itos:
+
+compan:	lodd cn1:	
+	push
+	lodd ans:
+	push
+	div
+	pop
+	stod ans:
+	pop
+	pop
+	pop
+	retn
+
+print:	pop
+	pop
+	pop
+	pop
+	halt
+	halt
+	
+	jneg fin:
+	addd cTI:
+	stod 4094
+	call xbsywt:
+	jump print:
+
+fin:	halt
+	pop
+	retn
+;+++++++++++++++++++++++++++++
+;input from user
+;+++++++++++++++++++++++++++++
+input:	lodd zero:
+	push
+cont:	call rbsywt:		;wait for it to turn on.
+	lodd 4092		;load results to acum
+	stod nC:
+	subd nL:
+	jzer endNum:
+	lodd nC:
+	subd cTI:		;converts char to int
+	addl 0
+	stol 0
+	mult 10		;push it on the top of stack
+	jump cont:
+endNum:	pop
+	stod bN:
+	lodd mask:
+	push
+	lodd bN:
+	push
+	div
+	pop
+	stod bN:
+	pop
+	pop
+	pop
+	retn
+;++++++++++++++++++++++++++++++++++
+;Reaceave bit system wait
+;Allows receaving 
+;++++++++++++++++++++++++++++++++++
+rbsywt:	lodd 4093		;move what is in the accumulator to be transmitted
+	subd mask:		;take of the mast to see if there is anything in buffer
+	jneg rbsywt:		;if results are negative there is nothing in buffer continue wait.
+	retn			;something in buffer return.
+;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+;print out string
+;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+nextw:	pshi			;push the "string" onto the stack
+	addd c1:		;set to point at next two char in string
+	stod pS:	;store in pointer to string.
+	jzer cRNL:		;if what it was pointing to is a ' ' will carage return
+	pop
+	stod 4094		;if not put what is in the acum into transmit memory
+	push			;push it onto to the stack
+	subd c255:	;subtract 255 to see if there are more charaters to the string.
+	jneg cRNL:		;nothing left perform carage return
+	call sb:		;something left to transmit swap bites
+	insp 1			;increase stack pointer by one.
+	push			;push next charater onto the stack
+	call xbsywt:		;transmit wait.
+	pop			;pop off the charater
+	stod 4094		;push it into transmit memory
+	call xbsywt:		;transmit wait
+	lodd pS:	;loads the pointer to the next two charaters to be transmitted
+	jump nextw:		;start over
+cRNL:	lodd cR:	;loads 13 to transmit cr ascii number
+	stod 4094		;stores it into memory to transmit
+	call xbsywt:		;busy wait to transmit.
+	lodd nL:		
+	stod 4094
+	call xbsywt:
+	pop
+	retn
+;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+;swaps the bites to be transmitted
+;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+sb:	loco 8			;8 to start moving the bits
+loop:	jzer done:		;if it is zero we are done.
+	subd c1:		;subtract 1 for current run
+	stod sBC:	;store results into count		
+	lodl 1			;loads the first two charaters to be swapped
+	jneg add1:		;if most sig bit is 1 add 1 to end
+	addl 1			;add it to itself end bit zero
+	stol 1			;store it back
+	lodd sBC:	;load swap bite count to dec 1
+	jump loop:	
+add1:	addl 1			;add it to itself to move bits left
+	addd c1:		;add 1 to the end
+	stol 1			;store it back into stack
+	lodd sBC:	;load the swapbite count to dec 1 next run
+	jump loop:
+done:	lodl 1
+	retn
+;~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+xbsywt:	lodd 4095		;load what is in the acumlator into transmit.
+	subd mask:		;see if there is more to transmit.
+	jneg xbsywt:		;wait until done.
+	retn			;done transmitting return to caller
+;~~~~~~~~~~~~~~~~~~~~~~
+;varables for program
+;~~~~~~~~~~~~~~~~~~~~~~
+cTI: 	48
+nC: 	0
+bN:	0
+sBC:	0
+mask:	10
+on:	8
+nL:	10
+cR:	13
+c1:	1
+c255:	255
+cn1:	-1
+pS:	0
+pt:	"PLEASE ENTER AN INTEGER BETWEEN 1 AND 32767"
+asr:	"THE SUM OF THESE INTEGERS IS:"
+error:	"OVERFLOW, NO SUM POSSIBLE"
+sum:	0
+ans:	0
+zero:	0
+temp:	0
+cn10:	-10

@@ -1,0 +1,5 @@
+#!/bin/sh
+
+files_only=$(ls -al | grep '^-')
+
+echo "$files_only"

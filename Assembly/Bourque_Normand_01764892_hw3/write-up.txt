@@ -1,0 +1,3 @@
+Normand_Bourque@student.uml.edu
+Degree of success: 100%
+Detailed description: I basiclly broke the project down into smaller parts I could understand.  Then looked at the itertave version and pictured it as a recersive programmed from there.

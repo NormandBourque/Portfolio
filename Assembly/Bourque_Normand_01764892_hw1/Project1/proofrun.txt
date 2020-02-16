@@ -1,0 +1,61 @@
+please enter a floating point number and new-line: 237.75
+Entry: 1the floating value for       237.750000 is broken out as:
+mantissa:       0x6dc000        or: 110 1101 1100 0000 0000 0000
+exponent:       0x86            or: 1000
+sign:           0               or: 01000 0110110 1101 1100 0000 0000 0000
+in base10:      237     or: 0 1000 0110 110 1101 1100 0000 0000 0000
+please enter a floating point number and new-line: -.0000005126
+Entry: 2the floating value for        -0.000001 is broken out as:
+mantissa:       0x9999b or: 000 1001 1001 1001 1001 1011
+exponent:       0x6a            or: 0110
+sign:           1               or: 10110 1010000 1001 1001 1001 1001 1011
+in base10:      0       or: 1 0110 1010 000 1001 1001 1001 1001 1011
+please enter a floating point number and new-line: -92457321.670245
+Entry: 3the floating value for  -92457320.000000 is broken out as:
+mantissa:       0x30592d        or: 011 0000 0101 1001 0010 1101
+exponent:       0x99            or: 1001
+sign:           1               or: 11001 1001011 0000 0101 1001 0010 1101
+in base10:      4202509976      or: 1 1001 1001 011 0000 0101 1001 0010 1101
+please enter a floating point number and new-line: 6.023E+23
+Entry: 4the floating value for  602299993035875123462144.000000 is broken out as:
+mantissa:       0x7f157f        or: 111 1111 0001 0101 0111 1111
+exponent:       0xcd            or: 1100
+sign:           0               or: 01100 1101111 1111 0001 0101 0111 1111
+in base10:      2147483648      or: 0 1100 1101 111 1111 0001 0101 0111 1111
+please enter a floating point number and new-line: 1.67339e-40
+Entry: 5the floating value for         0.000000 is broken out as:
+mantissa:       0x1d279 or: 000 0001 1101 0010 0111 1001
+exponent:       0x0             or: 0000
+sign:           0               or: 00000 0000000 0001 1101 0010 0111 1001
+in base10:      0       or: 0 0000 0000 000 0001 1101 0010 0111 1001
+please enter a floating point number and new-line: .759
+Entry: 6the floating value for         0.759000 is broken out as:
+mantissa:       0x424dd3        or: 100 0010 0100 1101 1101 0011
+exponent:       0x7e            or: 0111
+sign:           0               or: 00111 1110100 0010 0100 1101 1101 0011
+in base10:      0       or: 0 0111 1110 100 0010 0100 1101 1101 0011
+please enter a floating point number and new-line: 15002.587
+Entry: 7the floating value for     15002.586914 is broken out as:
+mantissa:       0x6a6a59        or: 110 1010 0110 1010 0101 1001
+exponent:       0x8c            or: 1000
+sign:           0               or: 01000 1100110 1010 0110 1010 0101 1001
+in base10:      15002   or: 0 1000 1100 110 1010 0110 1010 0101 1001
+please enter a floating point number and new-line: .56789
+Entry: 8the floating value for         0.567890 is broken out as:
+mantissa:       0x11613d        or: 001 0001 0110 0001 0011 1101
+exponent:       0x7e            or: 0111
+sign:           0               or: 00111 1110001 0001 0110 0001 0011 1101
+in base10:      0       or: 0 0111 1110 001 0001 0110 0001 0011 1101
+please enter a floating point number and new-line: 1556098.887
+Entry: 9the floating value for   1556098.875000 is broken out as:
+mantissa:       0x3df417        or: 011 1101 1111 0100 0001 0111
+exponent:       0x93            or: 1001
+sign:           0               or: 01001 0011011 1101 1111 0100 0001 0111
+in base10:      1556098 or: 0 1001 0011 011 1101 1111 0100 0001 0111
+please enter a floating point number and new-line: .584987
+Entry: 10the floating value for         0.584987 is broken out as:
+mantissa:       0x15c1b5        or: 001 0101 1100 0001 1011 0101
+exponent:       0x7e            or: 0111
+sign:           0               or: 00111 1110001 0101 1100 0001 1011 0101
+in base10:      0       or: 0 0111 1110 001 0101 1100 0001 1011 0101
+osboxes@osboxes:~/COMP3050/Project1$

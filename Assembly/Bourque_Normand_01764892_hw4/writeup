@@ -1,0 +1,9 @@
+Normand_Bourque@student.uml.edu
+0%
+
+I first wrote the solution using a MIC 1 emmulator doing it line by line.  The emmulator allowed me to see what is going on at each step.  Then when I tried
+to use my final soulution in the emmulator the school uses I had all sorts of compiling errors.  I have never used a flex file before nor have I used a
+make file like the one directed to use.  So when I went to compile my solution I was having problems.  It wasn't until I was instructed to make sure I was
+on a cirtain server was I able to compile.  The project is already hard enough to compleate without the additional level of not being told up frount 
+about errors that could happen if logging onto the cs server.  Once I was able to compile I was confused as to what was problems with my project and 
+what was problems with getting loged onto the wrong server.  I do feel if I were properly instructed I could have compleated the project sucessfully.

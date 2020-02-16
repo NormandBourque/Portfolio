@@ -1,0 +1,975 @@
+%!PS-Adobe-3.0
+%%BoundingBox: 50 50 562 742
+%%Title: Enscript Output
+%%Creator: GNU Enscript 1.6.5.90
+%%CreationDate: Fri Dec 21 07:16:54 2018
+%%Orientation: Portrait
+%%Pages: (atend)
+%%DocumentMedia: Letter 612 792 0 () ()
+%%DocumentNeededResources: (atend)
+%%EndComments
+%%BeginProlog
+%%BeginResource: procset Enscript-Prolog 1.6.5 90
+%
+% Procedures.
+%
+
+/_S {	% save current state
+  /_s save def
+} def
+/_R {	% restore from saved state
+  _s restore
+} def
+
+/S {	% showpage protecting gstate
+  gsave
+  showpage
+  grestore
+} bind def
+
+/MF {	% fontname newfontname -> -	make a new encoded font
+  /newfontname exch def
+  /fontname exch def
+
+  /fontdict fontname findfont def
+  /newfont fontdict maxlength dict def
+
+  fontdict {
+    exch
+    dup /FID eq {
+      % skip FID pair
+      pop pop
+    } {
+      % copy to the new font dictionary
+      exch newfont 3 1 roll put
+    } ifelse
+  } forall
+
+  newfont /FontName newfontname put
+
+  % insert only valid encoding vectors
+  encoding_vector length 256 eq {
+    newfont /Encoding encoding_vector put
+  } if
+
+  newfontname newfont definefont pop
+} def
+
+/MF_PS { % fontname newfontname -> -	make a new font preserving its enc
+  /newfontname exch def
+  /fontname exch def
+
+  /fontdict fontname findfont def
+  /newfont fontdict maxlength dict def
+
+  fontdict {
+    exch
+    dup /FID eq {
+      % skip FID pair
+      pop pop
+    } {
+      % copy to the new font dictionary
+      exch newfont 3 1 roll put
+    } ifelse
+  } forall
+
+  newfont /FontName newfontname put
+
+  newfontname newfont definefont pop
+} def
+
+/SF { % fontname width height -> -	set a new font
+  /height exch def
+  /width exch def
+
+  findfont
+  [width 0 0 height 0 0] makefont setfont
+} def
+
+/SUF { % fontname width height -> -	set a new user font
+  /height exch def
+  /width exch def
+
+  /F-gs-user-font MF
+  /F-gs-user-font width height SF
+} def
+
+/SUF_PS { % fontname width height -> -	set a new user font preserving its enc
+  /height exch def
+  /width exch def
+
+  /F-gs-user-font MF_PS
+  /F-gs-user-font width height SF
+} def
+
+/M {moveto} bind def
+/s {show} bind def
+
+/Box {	% x y w h -> -			define box path
+  /d_h exch def /d_w exch def /d_y exch def /d_x exch def
+  d_x d_y  moveto
+  d_w 0 rlineto
+  0 d_h rlineto
+  d_w neg 0 rlineto
+  closepath
+} def
+
+/bgs {	% x y height blskip gray str -> -	show string with bg color
+  /str exch def
+  /gray exch def
+  /blskip exch def
+  /height exch def
+  /y exch def
+  /x exch def
+
+  gsave
+    x y blskip sub str stringwidth pop height Box
+    gray setgray
+    fill
+  grestore
+  x y M str s
+} def
+
+/bgcs { % x y height blskip red green blue str -> -  show string with bg color
+  /str exch def
+  /blue exch def
+  /green exch def
+  /red exch def
+  /blskip exch def
+  /height exch def
+  /y exch def
+  /x exch def
+
+  gsave
+    x y blskip sub str stringwidth pop height Box
+    red green blue setrgbcolor
+    fill
+  grestore
+  x y M str s
+} def
+
+% Highlight bars.
+/highlight_bars {	% nlines lineheight output_y_margin gray -> -
+  gsave
+    setgray
+    /ymarg exch def
+    /lineheight exch def
+    /nlines exch def
+
+    % This 2 is just a magic number to sync highlight lines to text.
+    0 d_header_y ymarg sub 2 sub translate
+
+    /cw d_output_w cols div def
+    /nrows d_output_h ymarg 2 mul sub lineheight div cvi def
+
+    % for each column
+    0 1 cols 1 sub {
+      cw mul /xp exch def
+
+      % for each rows
+      0 1 nrows 1 sub {
+        /rn exch def
+        rn lineheight mul neg /yp exch def
+        rn nlines idiv 2 mod 0 eq {
+	  % Draw highlight bar.  4 is just a magic indentation.
+	  xp 4 add yp cw 8 sub lineheight neg Box fill
+	} if
+      } for
+    } for
+
+  grestore
+} def
+
+% Line highlight bar.
+/line_highlight {	% x y width height gray -> -
+  gsave
+    /gray exch def
+    Box gray setgray fill
+  grestore
+} def
+
+% Column separator lines.
+/column_lines {
+  gsave
+    .1 setlinewidth
+    0 d_footer_h translate
+    /cw d_output_w cols div def
+    1 1 cols 1 sub {
+      cw mul 0 moveto
+      0 d_output_h rlineto stroke
+    } for
+  grestore
+} def
+
+% Column borders.
+/column_borders {
+  gsave
+    .1 setlinewidth
+    0 d_footer_h moveto
+    0 d_output_h rlineto
+    d_output_w 0 rlineto
+    0 d_output_h neg rlineto
+    closepath stroke
+  grestore
+} def
+
+% Do the actual underlay drawing
+/draw_underlay {
+  ul_style 0 eq {
+    ul_str true charpath stroke
+  } {
+    ul_str show
+  } ifelse
+} def
+
+% Underlay
+/underlay {	% - -> -
+  gsave
+    0 d_page_h translate
+    d_page_h neg d_page_w atan rotate
+
+    ul_gray setgray
+    ul_font setfont
+    /dw d_page_h dup mul d_page_w dup mul add sqrt def
+    ul_str stringwidth pop dw exch sub 2 div ul_h_ptsize -2 div moveto
+    draw_underlay
+  grestore
+} def
+
+/user_underlay {	% - -> -
+  gsave
+    ul_x ul_y translate
+    ul_angle rotate
+    ul_gray setgray
+    ul_font setfont
+    0 0 ul_h_ptsize 2 div sub moveto
+    draw_underlay
+  grestore
+} def
+
+% Page prefeed
+/page_prefeed {		% bool -> -
+  statusdict /prefeed known {
+    statusdict exch /prefeed exch put
+  } {
+    pop
+  } ifelse
+} def
+
+% Wrapped line markers
+/wrapped_line_mark {	% x y charwith charheight type -> -
+  /type exch def
+  /h exch def
+  /w exch def
+  /y exch def
+  /x exch def
+
+  type 2 eq {
+    % Black boxes (like TeX does)
+    gsave
+      0 setlinewidth
+      x w 4 div add y M
+      0 h rlineto w 2 div 0 rlineto 0 h neg rlineto
+      closepath fill
+    grestore
+  } {
+    type 3 eq {
+      % Small arrows
+      gsave
+        .2 setlinewidth
+        x w 2 div add y h 2 div add M
+        w 4 div 0 rlineto
+        x w 4 div add y lineto stroke
+
+        x w 4 div add w 8 div add y h 4 div add M
+        x w 4 div add y lineto
+	w 4 div h 8 div rlineto stroke
+      grestore
+    } {
+      % do nothing
+    } ifelse
+  } ifelse
+} def
+
+% EPSF import.
+
+/BeginEPSF {
+  /b4_Inc_state save def    		% Save state for cleanup
+  /dict_count countdictstack def	% Count objects on dict stack
+  /op_count count 1 sub def		% Count objects on operand stack
+  userdict begin
+  /showpage { } def
+  0 setgray 0 setlinecap
+  1 setlinewidth 0 setlinejoin
+  10 setmiterlimit [ ] 0 setdash newpath
+  /languagelevel where {
+    pop languagelevel
+    1 ne {
+      false setstrokeadjust false setoverprint
+    } if
+  } if
+} bind def
+
+/EndEPSF {
+  count op_count sub { pos } repeat	% Clean up stacks
+  countdictstack dict_count sub { end } repeat
+  b4_Inc_state restore
+} bind def
+
+% Check PostScript language level.
+/languagelevel where {
+  pop /gs_languagelevel languagelevel def
+} {
+  /gs_languagelevel 1 def
+} ifelse
+%%EndResource
+%%BeginResource: procset Enscript-Encoding-88591 1.6.5 90
+/encoding_vector [
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/space        	/exclam       	/quotedbl     	/numbersign   	
+/dollar       	/percent      	/ampersand    	/quoteright   	
+/parenleft    	/parenright   	/asterisk     	/plus         	
+/comma        	/hyphen       	/period       	/slash        	
+/zero         	/one          	/two          	/three        	
+/four         	/five         	/six          	/seven        	
+/eight        	/nine         	/colon        	/semicolon    	
+/less         	/equal        	/greater      	/question     	
+/at           	/A            	/B            	/C            	
+/D            	/E            	/F            	/G            	
+/H            	/I            	/J            	/K            	
+/L            	/M            	/N            	/O            	
+/P            	/Q            	/R            	/S            	
+/T            	/U            	/V            	/W            	
+/X            	/Y            	/Z            	/bracketleft  	
+/backslash    	/bracketright 	/asciicircum  	/underscore   	
+/quoteleft    	/a            	/b            	/c            	
+/d            	/e            	/f            	/g            	
+/h            	/i            	/j            	/k            	
+/l            	/m            	/n            	/o            	
+/p            	/q            	/r            	/s            	
+/t            	/u            	/v            	/w            	
+/x            	/y            	/z            	/braceleft    	
+/bar          	/braceright   	/tilde        	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/.notdef      	/.notdef      	/.notdef      	/.notdef      	
+/space        	/exclamdown   	/cent         	/sterling     	
+/currency     	/yen          	/brokenbar    	/section      	
+/dieresis     	/copyright    	/ordfeminine  	/guillemotleft	
+/logicalnot   	/hyphen       	/registered   	/macron       	
+/degree       	/plusminus    	/twosuperior  	/threesuperior	
+/acute        	/mu           	/paragraph    	/bullet       	
+/cedilla      	/onesuperior  	/ordmasculine 	/guillemotright	
+/onequarter   	/onehalf      	/threequarters	/questiondown 	
+/Agrave       	/Aacute       	/Acircumflex  	/Atilde       	
+/Adieresis    	/Aring        	/AE           	/Ccedilla     	
+/Egrave       	/Eacute       	/Ecircumflex  	/Edieresis    	
+/Igrave       	/Iacute       	/Icircumflex  	/Idieresis    	
+/Eth          	/Ntilde       	/Ograve       	/Oacute       	
+/Ocircumflex  	/Otilde       	/Odieresis    	/multiply     	
+/Oslash       	/Ugrave       	/Uacute       	/Ucircumflex  	
+/Udieresis    	/Yacute       	/Thorn        	/germandbls   	
+/agrave       	/aacute       	/acircumflex  	/atilde       	
+/adieresis    	/aring        	/ae           	/ccedilla     	
+/egrave       	/eacute       	/ecircumflex  	/edieresis    	
+/igrave       	/iacute       	/icircumflex  	/idieresis    	
+/eth          	/ntilde       	/ograve       	/oacute       	
+/ocircumflex  	/otilde       	/odieresis    	/divide       	
+/oslash       	/ugrave       	/uacute       	/ucircumflex  	
+/udieresis    	/yacute       	/thorn        	/ydieresis    	
+] def
+%%EndResource
+%%EndProlog
+%%BeginSetup
+%%IncludeResource: font Courier-Bold
+%%IncludeResource: font Courier
+/HFpt_w 10 def
+/HFpt_h 10 def
+/Courier-Bold /HF-gs-font MF
+/HF /HF-gs-font findfont [HFpt_w 0 0 HFpt_h 0 0] makefont def
+/Courier /F-gs-font MF
+/F-gs-font 10 10 SF
+/#copies 1 def
+% Pagedevice definitions:
+gs_languagelevel 1 gt {
+  <<
+    /PageSize [612 792] 
+  >> setpagedevice
+} if
+%%BeginResource: procset Enscript-Header-simple 1.6.5 90
+
+/do_header {	% print default simple header
+  gsave
+    d_header_x d_header_y HFpt_h 3 div add translate
+
+    HF setfont
+    user_header_p {
+      5 0 moveto user_header_left_str show
+
+      d_header_w user_header_center_str stringwidth pop sub 2 div
+      0 moveto user_header_center_str show
+
+      d_header_w user_header_right_str stringwidth pop sub 5 sub
+      0 moveto user_header_right_str show
+    } {
+      5 0 moveto fname show
+      45 0 rmoveto fmodstr show
+      45 0 rmoveto pagenumstr show
+    } ifelse
+
+  grestore
+} def
+%%EndResource
+/d_page_w 512 def
+/d_page_h 692 def
+/d_header_x 0 def
+/d_header_y 677 def
+/d_header_w 512 def
+/d_header_h 15 def
+/d_footer_x 0 def
+/d_footer_y 0 def
+/d_footer_w 512 def
+/d_footer_h 0 def
+/d_output_w 512 def
+/d_output_h 677 def
+/cols 1 def
+%%EndSetup
+%%Page: (1) 1
+%%BeginPageSetup
+_S
+50 50 translate
+/pagenum 1 def
+/fname (AirportServer.cpp) def
+/fdir (.) def
+/ftail (AirportServer.cpp) def
+% User defined strings:
+/fmodstr (Fri Dec 21 07:12:51 2018) def
+/pagenumstr (1) def
+/user_header_p false def
+/user_footer_p false def
+%%EndPageSetup
+do_header
+30 664 M (1:) s
+48 664 M
+(#include <iostream>) s
+30 653 M (2:) s
+48 653 M
+(#include <thread>) s
+30 642 M (3:) s
+48 642 M
+(#include <condition_variable>) s
+30 631 M (4:) s
+30 620 M (5:) s
+48 620 M
+(#include "AirportServer.h") s
+30 609 M (6:) s
+30 598 M (7:) s
+48 598 M
+(mutex AirportServer::runwayFourL;) s
+30 587 M (8:) s
+48 587 M
+(mutex AirportServer::runwayFourR;) s
+30 576 M (9:) s
+48 576 M
+(mutex AirportServer::runwayNine;) s
+24 565 M (10:) s
+48 565 M
+(mutex AirportServer::runwayFourteen;) s
+24 554 M (11:) s
+48 554 M
+(mutex AirportServer::runwayFifteenL;) s
+24 543 M (12:) s
+48 543 M
+(mutex AirportServer::runwayFifteenR;) s
+24 532 M (13:) s
+24 521 M (14:) s
+48 521 M
+(/**) s
+24 510 M (15:) s
+48 510 M
+(*  Called by an Airplane when it wishes to land on a runway) s
+24 499 M (16:) s
+48 499 M
+(*/) s
+24 488 M (17:) s
+48 488 M
+(void AirportServer::reserveRunway\(int airplaneNum, AirportRunways::RunwayNum) s
+5 477 M
+(ber runway\)) s
+24 466 M (18:) s
+48 466 M
+({) s
+24 455 M (19:) s
+48 455 M
+(        // Acquire runway\(s\)) s
+24 444 M (20:) s
+48 444 M
+(        { // Begin critical region) s
+24 433 M (21:) s
+24 422 M (22:) s
+48 422 M
+(                {) s
+24 411 M (23:) s
+48 411 M
+(                        lock_guard<mutex> lk\(AirportRunways::checkMutex\);) s
+24 400 M (24:) s
+24 389 M (25:) s
+48 389 M
+(                        cout << "Airplane #" << airplaneNum << " is acquirin) s
+5 378 M
+(g any needed runway\(s\) for landing on Runway ") s
+24 367 M (26:) s
+48 367 M
+(                                 << AirportRunways::runwayName\(runway\) << en) s
+5 356 M
+(dl;) s
+24 345 M (27:) s
+48 345 M
+(                }) s
+24 334 M (28:) s
+24 323 M (29:) s
+48 323 M
+(                switch \(runway\)) s
+24 312 M (30:) s
+48 312 M
+(                {) s
+24 301 M (31:) s
+48 301 M
+(                case AirportRunways::RunwayNumber::RUNWAY_4L:) s
+24 290 M (32:) s
+48 290 M
+(                        runwayFourL.lock\(\);) s
+24 279 M (33:) s
+48 279 M
+(                        runwayFifteenL.lock\(\);) s
+24 268 M (34:) s
+48 268 M
+(                        runwayFifteenR.lock\(\);) s
+24 257 M (35:) s
+48 257 M
+(                        break;) s
+24 246 M (36:) s
+48 246 M
+(                case AirportRunways::RunwayNumber::RUNWAY_4R:) s
+24 235 M (37:) s
+48 235 M
+(                        runwayFourR.lock\(\);) s
+24 224 M (38:) s
+48 224 M
+(                        runwayNine.lock\(\);) s
+24 213 M (39:) s
+48 213 M
+(                        runwayFifteenL.lock\(\);) s
+24 202 M (40:) s
+48 202 M
+(                        runwayFifteenR.lock\(\);) s
+24 191 M (41:) s
+48 191 M
+(                        break;) s
+24 180 M (42:) s
+48 180 M
+(                case AirportRunways::RunwayNumber::RUNWAY_9:) s
+24 169 M (43:) s
+48 169 M
+(                        runwayFourR.lock\(\);) s
+24 158 M (44:) s
+48 158 M
+(                        runwayNine.lock\(\);) s
+24 147 M (45:) s
+48 147 M
+(                        runwayFifteenR.lock\(\);) s
+24 136 M (46:) s
+48 136 M
+(                        break;) s
+24 125 M (47:) s
+48 125 M
+(                case AirportRunways::RunwayNumber::RUNWAY_14:) s
+24 114 M (48:) s
+48 114 M
+(                        runwayFourteen.lock\(\);) s
+24 103 M (49:) s
+48 103 M
+(                        break;) s
+24 92 M (50:) s
+48 92 M
+(                case AirportRunways::RunwayNumber::RUNWAY_15L:) s
+24 81 M (51:) s
+48 81 M
+(                        runwayFourL.lock\(\);) s
+24 70 M (52:) s
+48 70 M
+(                        runwayFourR.lock\(\);) s
+24 59 M (53:) s
+48 59 M
+(                        runwayFifteenL.lock\(\);) s
+24 48 M (54:) s
+48 48 M
+(                        break;) s
+24 37 M (55:) s
+48 37 M
+(                case AirportRunways::RunwayNumber::RUNWAY_15R:) s
+24 26 M (56:) s
+48 26 M
+(                        runwayFourL.lock\(\);) s
+24 15 M (57:) s
+48 15 M
+(                        runwayFourR.lock\(\);) s
+24 4 M (58:) s
+48 4 M
+(                        runwayNine.lock\(\);) s
+_R
+S
+%%Page: (2) 2
+%%BeginPageSetup
+_S
+50 50 translate
+/pagenum 2 def
+/fname (AirportServer.cpp) def
+/fdir (.) def
+/ftail (AirportServer.cpp) def
+% User defined strings:
+/fmodstr (Fri Dec 21 07:12:51 2018) def
+/pagenumstr (2) def
+/user_header_p false def
+/user_footer_p false def
+%%EndPageSetup
+do_header
+24 664 M (59:) s
+48 664 M
+(                        runwayFifteenR.lock\(\);) s
+24 653 M (60:) s
+48 653 M
+(                        break;) s
+24 642 M (61:) s
+48 642 M
+(                default:) s
+24 631 M (62:) s
+48 631 M
+(                        std::cout << "not found runway for lock ============) s
+5 620 M
+(===================================================================================) s
+5 609 M
+(==================";) s
+24 598 M (63:) s
+48 598 M
+(                }) s
+24 587 M (64:) s
+48 587 M
+(                // Check status of the airport for any rule violations) s
+24 576 M (65:) s
+24 565 M (66:) s
+48 565 M
+(                AirportRunways::checkAirportStatus\(runway\);) s
+24 554 M (67:) s
+24 543 M (68:) s
+48 543 M
+(                //runwaysLock.unlock\(\);) s
+24 532 M (69:) s
+24 521 M (70:) s
+48 521 M
+(        } // End critical region) s
+24 510 M (71:) s
+24 499 M (72:) s
+48 499 M
+(        // obtain a seed from the system clock:) s
+24 488 M (73:) s
+48 488 M
+(        unsigned seed = std::chrono::system_clock::now\(\).time_since_epoch\(\).) s
+5 477 M
+(count\(\);) s
+24 466 M (74:) s
+48 466 M
+(        std::default_random_engine generator\(seed\);) s
+24 455 M (75:) s
+24 444 M (76:) s
+48 444 M
+(        // Taxi for a random number of milliseconds) s
+24 433 M (77:) s
+48 433 M
+(        std::uniform_int_distribution<int> taxiTimeDistribution\(1, MAX_TAXI_) s
+5 422 M
+(TIME\);) s
+24 411 M (78:) s
+48 411 M
+(        int taxiTime = taxiTimeDistribution\(generator\);) s
+24 400 M (79:) s
+24 389 M (80:) s
+48 389 M
+(        {) s
+24 378 M (81:) s
+48 378 M
+(                lock_guard<mutex> lk\(AirportRunways::checkMutex\);) s
+24 367 M (82:) s
+24 356 M (83:) s
+48 356 M
+(                cout << "Airplane #" << airplaneNum << " is taxiing on Runwa) s
+5 345 M
+(y " << AirportRunways::runwayName\(runway\)) s
+24 334 M (84:) s
+48 334 M
+(                         << " for " << taxiTime << " milliseconds\\n";) s
+24 323 M (85:) s
+48 323 M
+(        }) s
+24 312 M (86:) s
+24 301 M (87:) s
+48 301 M
+(        std::this_thread::sleep_for\(std::chrono::milliseconds\(taxiTime\)\);) s
+24 290 M (88:) s
+24 279 M (89:) s
+48 279 M
+(} // end AirportServer::reserveRunway\(\)) s
+24 268 M (90:) s
+24 257 M (91:) s
+48 257 M
+(/**) s
+24 246 M (92:) s
+48 246 M
+(  *  Called by an Airplane when it is finished landing) s
+24 235 M (93:) s
+48 235 M
+(  */) s
+24 224 M (94:) s
+48 224 M
+(void AirportServer::releaseRunway\(int airplaneNum, AirportRunways::RunwayNum) s
+5 213 M
+(ber runway\)) s
+24 202 M (95:) s
+48 202 M
+({) s
+24 191 M (96:) s
+48 191 M
+(        // Release the landing runway and any other needed runways) s
+24 180 M (97:) s
+48 180 M
+(        { // Begin critical region) s
+24 169 M (98:) s
+24 158 M (99:) s
+48 158 M
+(                //unique_lock<mutex> runwaysLock\(runwaysMutex\);) s
+18 147 M (100:) s
+48 147 M
+(                {) s
+18 136 M (101:) s
+48 136 M
+(                        lock_guard<mutex> lk\(AirportRunways::checkMutex\);) s
+18 125 M (102:) s
+18 114 M (103:) s
+48 114 M
+(                        cout << "Airplane #" << airplaneNum << " is releasin) s
+5 103 M
+(g any needed runway\(s\) after landing on Runway ") s
+18 92 M (104:) s
+48 92 M
+(                                 << AirportRunways::runwayName\(runway\) << en) s
+5 81 M
+(dl;) s
+18 70 M (105:) s
+48 70 M
+(                }) s
+18 59 M (106:) s
+18 48 M (107:) s
+48 48 M
+(                /**) s
+18 37 M (108:) s
+48 37 M
+(                *  ***** Add your synchronization here! *****) s
+18 26 M (109:) s
+48 26 M
+(                */) s
+18 15 M (110:) s
+48 15 M
+(                AirportRunways::finishedWithRunway\(runway\);) s
+18 4 M (111:) s
+48 4 M
+(                switch \(runway\)) s
+_R
+S
+%%Page: (3) 3
+%%BeginPageSetup
+_S
+50 50 translate
+/pagenum 3 def
+/fname (AirportServer.cpp) def
+/fdir (.) def
+/ftail (AirportServer.cpp) def
+% User defined strings:
+/fmodstr (Fri Dec 21 07:12:51 2018) def
+/pagenumstr (3) def
+/user_header_p false def
+/user_footer_p false def
+%%EndPageSetup
+do_header
+18 664 M (112:) s
+48 664 M
+(                {) s
+18 653 M (113:) s
+48 653 M
+(                case AirportRunways::RunwayNumber::RUNWAY_4L:) s
+18 642 M (114:) s
+48 642 M
+(                        runwayFourL.unlock\(\);) s
+18 631 M (115:) s
+48 631 M
+(                        runwayFifteenL.unlock\(\);) s
+18 620 M (116:) s
+48 620 M
+(                        runwayFifteenR.unlock\(\);) s
+18 609 M (117:) s
+48 609 M
+(                        break;) s
+18 598 M (118:) s
+48 598 M
+(                case AirportRunways::RunwayNumber::RUNWAY_4R:) s
+18 587 M (119:) s
+48 587 M
+(                        runwayFourR.unlock\(\);) s
+18 576 M (120:) s
+48 576 M
+(                        runwayNine.unlock\(\);) s
+18 565 M (121:) s
+48 565 M
+(                        runwayFifteenL.unlock\(\);) s
+18 554 M (122:) s
+48 554 M
+(                        runwayFifteenR.unlock\(\);) s
+18 543 M (123:) s
+48 543 M
+(                        break;) s
+18 532 M (124:) s
+48 532 M
+(                case AirportRunways::RunwayNumber::RUNWAY_9:) s
+18 521 M (125:) s
+48 521 M
+(                        runwayFourR.unlock\(\);) s
+18 510 M (126:) s
+48 510 M
+(                        runwayNine.unlock\(\);) s
+18 499 M (127:) s
+48 499 M
+(                        runwayFifteenR.unlock\(\);) s
+18 488 M (128:) s
+48 488 M
+(                        break;) s
+18 477 M (129:) s
+48 477 M
+(                case AirportRunways::RunwayNumber::RUNWAY_14:) s
+18 466 M (130:) s
+48 466 M
+(                        runwayFourteen.unlock\(\);) s
+18 455 M (131:) s
+48 455 M
+(                        break;) s
+18 444 M (132:) s
+48 444 M
+(                case AirportRunways::RunwayNumber::RUNWAY_15L:) s
+18 433 M (133:) s
+48 433 M
+(                        runwayFourL.unlock\(\);) s
+18 422 M (134:) s
+48 422 M
+(                        runwayFourR.unlock\(\);) s
+18 411 M (135:) s
+48 411 M
+(                        runwayFifteenL.unlock\(\);) s
+18 400 M (136:) s
+48 400 M
+(                        break;) s
+18 389 M (137:) s
+48 389 M
+(                case AirportRunways::RunwayNumber::RUNWAY_15R:) s
+18 378 M (138:) s
+48 378 M
+(                        runwayFourL.unlock\(\);) s
+18 367 M (139:) s
+48 367 M
+(                        runwayFourR.unlock\(\);) s
+18 356 M (140:) s
+48 356 M
+(                        runwayNine.unlock\(\);) s
+18 345 M (141:) s
+48 345 M
+(                        runwayFifteenR.unlock\(\);) s
+18 334 M (142:) s
+48 334 M
+(                        break;) s
+18 323 M (143:) s
+48 323 M
+(                }) s
+18 312 M (144:) s
+18 301 M (145:) s
+48 301 M
+(                // Update the status of the airport to indicate that the lan) s
+5 290 M
+(ding is complete) s
+18 279 M (146:) s
+48 279 M
+(        } // End critical region) s
+18 268 M (147:) s
+18 257 M (148:) s
+48 257 M
+(        // obtain a seed from the system clock:) s
+18 246 M (149:) s
+48 246 M
+(        unsigned seed = std::chrono::system_clock::now\(\).time_since_epoch\(\).) s
+5 235 M
+(count\(\);) s
+18 224 M (150:) s
+48 224 M
+(        std::default_random_engine generator\(seed\);) s
+18 213 M (151:) s
+18 202 M (152:) s
+48 202 M
+(        // Wait for a random number of milliseconds before requesting the ne) s
+5 191 M
+(xt landing for this Airplane) s
+18 180 M (153:) s
+48 180 M
+(        std::uniform_int_distribution<int> waitTimeDistribution\(1, MAX_WAIT_) s
+5 169 M
+(TIME\);) s
+18 158 M (154:) s
+48 158 M
+(        int waitTime = waitTimeDistribution\(generator\);) s
+18 147 M (155:) s
+18 136 M (156:) s
+48 136 M
+(        {) s
+18 125 M (157:) s
+48 125 M
+(                lock_guard<mutex> lk\(AirportRunways::checkMutex\);) s
+18 114 M (158:) s
+18 103 M (159:) s
+48 103 M
+(                cout << "Airplane #" << airplaneNum << " is waiting for " <<) s
+5 92 M
+( waitTime << " milliseconds before landing again\\n";) s
+18 81 M (160:) s
+48 81 M
+(        }) s
+18 70 M (161:) s
+18 59 M (162:) s
+48 59 M
+(        std::this_thread::sleep_for\(std::chrono::milliseconds\(waitTime\)\);) s
+18 48 M (163:) s
+18 37 M (164:) s
+48 37 M
+(} // end AirportServer::releaseRunway\(\)) s
+_R
+S
+%%Trailer
+%%Pages: 3
+%%DocumentNeededResources: font Courier-Bold Courier 
+%%EOF

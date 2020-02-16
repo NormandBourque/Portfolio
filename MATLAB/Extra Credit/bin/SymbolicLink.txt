@@ -1,0 +1,803 @@
+.:
+total 40
+drwxrwxr-x 8 adiveglia6163 adiveglia6163 4096 Nov 30 14:29 apple
+drwxrwxr-x 6 adiveglia6163 adiveglia6163 4096 Oct 25  2012 banana
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Nov 30 14:21 Dir1
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Nov 30 14:21 Dir2
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Nov 30 14:21 Dir3
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Nov 30 14:21 Dir4
+-rw-rw-r-- 1 adiveglia6163 adiveglia6163    0 Nov 30 14:28 file1
+drwxrwxr-x 6 adiveglia6163 adiveglia6163 4096 Oct 25  2012 grape
+drwxrwxr-x 3 adiveglia6163 adiveglia6163 4096 Oct 25  2012 peach
+drwxrwxr-x 4 adiveglia6163 adiveglia6163 4096 Oct 25  2012 pear
+drwxrwxr-x 5 adiveglia6163 adiveglia6163 4096 Oct 25  2012 plum
+-rw-rw-r-- 1 adiveglia6163 adiveglia6163    0 Nov 30 14:33 SymbolicLink.txt
+
+./apple:
+total 24
+drwxrwxr-x 6 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Akira
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Nov 30 14:23 Dir5
+drwxrwxr-x 7 adiveglia6163 adiveglia6163 4096 Nov 30 14:29 Ed
+drwxrwxr-x 6 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Ein
+-rw-rw-r-- 1 adiveglia6163 adiveglia6163    0 Nov 30 14:29 file2
+drwxrwxr-x 4 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Lucy
+drwxrwxr-x 5 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Naruto
+
+./apple/Akira:
+total 16
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Nemu
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Ranma
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Shinji
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Washuu
+
+./apple/Akira/Nemu:
+total 0
+
+./apple/Akira/Ranma:
+total 0
+
+./apple/Akira/Shinji:
+total 0
+
+./apple/Akira/Washuu:
+total 0
+
+./apple/Dir5:
+total 0
+
+./apple/Ed:
+total 20
+drwxrwxr-x 6 adiveglia6163 adiveglia6163 4096 Nov 30 14:29 Bido
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 BidoBuccaneer
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Nov 30 14:24 Dir6
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Envy
+-rw-rw-r-- 1 adiveglia6163 adiveglia6163    0 Nov 30 14:29 file3
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Grumman
+
+./apple/Ed/Bido:
+total 16
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Nov 30 14:26 Dir10
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Nov 30 14:25 Dir7
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Nov 30 14:26 Dir8
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Nov 30 14:26 Dir9
+-rw-rw-r-- 1 adiveglia6163 adiveglia6163    0 Nov 30 14:29 file4
+-rw-rw-r-- 1 adiveglia6163 adiveglia6163    0 Nov 30 14:29 file5
+
+./apple/Ed/Bido/Dir10:
+total 0
+
+./apple/Ed/Bido/Dir7:
+total 0
+
+./apple/Ed/Bido/Dir8:
+total 0
+
+./apple/Ed/Bido/Dir9:
+total 0
+
+./apple/Ed/BidoBuccaneer:
+total 0
+
+./apple/Ed/Dir6:
+total 0
+
+./apple/Ed/Envy:
+total 0
+
+./apple/Ed/Grumman:
+total 0
+
+./apple/Ein:
+total 16
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Lydia
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Mason
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Rio
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Wrath
+
+./apple/Ein/Lydia:
+total 0
+
+./apple/Ein/Mason:
+total 0
+
+./apple/Ein/Rio:
+total 0
+
+./apple/Ein/Wrath:
+total 0
+
+./apple/Lucy:
+total 8
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Asuka
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Gendo
+
+./apple/Lucy/Asuka:
+total 0
+
+./apple/Lucy/Gendo:
+total 0
+
+./apple/Naruto:
+total 12
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Rei
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Ryoji
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Shinji
+
+./apple/Naruto/Rei:
+total 0
+
+./apple/Naruto/Ryoji:
+total 0
+
+./apple/Naruto/Shinji:
+total 0
+
+./banana:
+total 16
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Bishop
+drwxrwxr-x 4 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Knight
+drwxrwxr-x 4 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Pawn
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Rook
+
+./banana/Bishop:
+total 0
+
+./banana/Knight:
+total 8
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 King
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Queen
+
+./banana/Knight/King:
+total 0
+
+./banana/Knight/Queen:
+total 0
+
+./banana/Pawn:
+total 8
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Checkmate
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Gambit
+-rw-rw-r-- 1 adiveglia6163 adiveglia6163    0 Oct 25  2012 Stalemate
+
+./banana/Pawn/Checkmate:
+total 0
+
+./banana/Pawn/Gambit:
+total 0
+
+./banana/Rook:
+total 0
+
+./Dir1:
+total 0
+
+./Dir2:
+total 0
+
+./Dir3:
+total 0
+
+./Dir4:
+total 0
+
+./grape:
+total 16
+drwxrwxr-x 3 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Blue
+drwxrwxr-x 4 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Brie
+drwxrwxr-x 4 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Camembert
+drwxrwxr-x 4 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Cheddar
+
+./grape/Blue:
+total 4
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Fontina
+
+./grape/Blue/Fontina:
+total 0
+
+./grape/Brie:
+total 8
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Colby
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Curds
+
+./grape/Brie/Colby:
+total 0
+
+./grape/Brie/Curds:
+total 0
+
+./grape/Camembert:
+total 8
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Feta
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Gloucester
+
+./grape/Camembert/Feta:
+total 0
+
+./grape/Camembert/Gloucester:
+total 0
+
+./grape/Cheddar:
+total 8
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Gouda
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Mascarpone
+
+./grape/Cheddar/Gouda:
+total 0
+
+./grape/Cheddar/Mascarpone:
+total 0
+
+./peach:
+total 4
+drwxrwxr-x 5 adiveglia6163 adiveglia6163 4096 Oct 25  2012 LinkToMe
+
+./peach/LinkToMe:
+total 12
+drwxrwxr-x 4 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Mozzarella
+drwxrwxr-x 3 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Parmesan
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Provolone
+
+./peach/LinkToMe/Mozzarella:
+total 8
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Ricotta
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Roquefort
+
+./peach/LinkToMe/Mozzarella/Ricotta:
+total 0
+
+./peach/LinkToMe/Mozzarella/Roquefort:
+total 0
+
+./peach/LinkToMe/Parmesan:
+total 4
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Swiss
+
+./peach/LinkToMe/Parmesan/Swiss:
+total 0
+
+./peach/LinkToMe/Provolone:
+total 0
+
+./pear:
+total 8
+drwxrwxr-x 5 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Batman
+drwxrwxr-x 4 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Superman
+
+./pear/Batman:
+total 12
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Joker
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Quinn
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Robin
+
+./pear/Batman/Joker:
+total 0
+
+./pear/Batman/Quinn:
+total 0
+
+./pear/Batman/Robin:
+total 0
+
+./pear/Superman:
+total 8
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Lex
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Lois
+
+./pear/Superman/Lex:
+total 0
+
+./pear/Superman/Lois:
+total 0
+
+./plum:
+total 12
+drwxrwxr-x 5 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Java
+drwxrwxr-x 5 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Javascript
+drwxrwxr-x 7 adiveglia6163 adiveglia6163 4096 Oct 25  2012 LISP
+
+./plum/Java:
+total 12
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Assembly
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 BASIC
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 C
+
+./plum/Java/Assembly:
+total 0
+
+./plum/Java/BASIC:
+total 0
+
+./plum/Java/C:
+total 0
+
+./plum/Javascript:
+total 12
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Fortran
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Logo
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Lua
+
+./plum/Javascript/Fortran:
+total 0
+
+./plum/Javascript/Logo:
+total 0
+
+./plum/Javascript/Lua:
+total 0
+
+./plum/LISP:
+total 20
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Pascal
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Perl
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 PHP
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Prolog
+drwxrwxr-x 6 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Ruby
+
+./plum/LISP/Pascal:
+total 0
+
+./plum/LISP/Perl:
+total 0
+
+./plum/LISP/PHP:
+total 0
+
+./plum/LISP/Prolog:
+total 0
+
+./plum/LISP/Ruby:
+total 16
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 OnRails
+drwxrwxr-x 6 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Python
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Smalltalk
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 VB
+
+./plum/LISP/Ruby/OnRails:
+total 0
+
+./plum/LISP/Ruby/Python:
+total 16
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Modula
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Pit
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 TCL
+drwxrwxr-x 4 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Whitespace
+
+./plum/LISP/Ruby/Python/Modula:
+total 0
+
+./plum/LISP/Ruby/Python/Pit:
+total 0
+
+./plum/LISP/Ruby/Python/TCL:
+total 0
+
+./plum/LISP/Ruby/Python/Whitespace:
+total 8
+drwxrwxr-x 3 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Haskell
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Hypertalk
+
+./plum/LISP/Ruby/Python/Whitespace/Haskell:
+total 4
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 ASP
+
+./plum/LISP/Ruby/Python/Whitespace/Haskell/ASP:
+total 0
+
+./plum/LISP/Ruby/Python/Whitespace/Hypertalk:
+total 0
+
+./plum/LISP/Ruby/Smalltalk:
+total 0
+
+./plum/LISP/Ruby/VB:
+total 0
+.:
+total 52
+drwxrwxr-x 8 adiveglia6163 adiveglia6163 4096 Nov 30 14:29 apple
+drwxrwxr-x 6 adiveglia6163 adiveglia6163 4096 Oct 25  2012 banana
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Nov 30 14:21 Dir1
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Nov 30 14:21 Dir2
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Nov 30 14:21 Dir3
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Nov 30 14:21 Dir4
+-rw-rw-r-- 1 adiveglia6163 adiveglia6163    0 Nov 30 14:28 file1
+drwxrwxr-x 6 adiveglia6163 adiveglia6163 4096 Oct 25  2012 grape
+lrwxrwxrwx 1 adiveglia6163 adiveglia6163   43 Dec  5 19:56 MySoftLink -> /home/adiveglia6163/bin/lab6/peach/LinkToMe
+drwxrwxr-x 3 adiveglia6163 adiveglia6163 4096 Dec  5 19:58 peach
+drwxrwxr-x 4 adiveglia6163 adiveglia6163 4096 Oct 25  2012 pear
+drwxrwxr-x 5 adiveglia6163 adiveglia6163 4096 Oct 25  2012 plum
+-rw-rw-r-- 1 adiveglia6163 adiveglia6163 9630 Dec  5 19:10 SymbolicLink.txt
+
+./apple:
+total 24
+drwxrwxr-x 6 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Akira
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Nov 30 14:23 Dir5
+drwxrwxr-x 7 adiveglia6163 adiveglia6163 4096 Nov 30 14:29 Ed
+drwxrwxr-x 6 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Ein
+-rw-rw-r-- 1 adiveglia6163 adiveglia6163    0 Nov 30 14:29 file2
+drwxrwxr-x 4 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Lucy
+drwxrwxr-x 5 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Naruto
+
+./apple/Akira:
+total 16
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Nemu
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Ranma
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Shinji
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Washuu
+
+./apple/Akira/Nemu:
+total 0
+
+./apple/Akira/Ranma:
+total 0
+
+./apple/Akira/Shinji:
+total 0
+
+./apple/Akira/Washuu:
+total 0
+
+./apple/Dir5:
+total 0
+
+./apple/Ed:
+total 20
+drwxrwxr-x 6 adiveglia6163 adiveglia6163 4096 Nov 30 14:29 Bido
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 BidoBuccaneer
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Nov 30 14:24 Dir6
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Envy
+-rw-rw-r-- 1 adiveglia6163 adiveglia6163    0 Nov 30 14:29 file3
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Grumman
+
+./apple/Ed/Bido:
+total 16
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Nov 30 14:26 Dir10
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Nov 30 14:25 Dir7
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Nov 30 14:26 Dir8
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Nov 30 14:26 Dir9
+-rw-rw-r-- 1 adiveglia6163 adiveglia6163    0 Nov 30 14:29 file4
+-rw-rw-r-- 1 adiveglia6163 adiveglia6163    0 Nov 30 14:29 file5
+
+./apple/Ed/Bido/Dir10:
+total 0
+
+./apple/Ed/Bido/Dir7:
+total 0
+
+./apple/Ed/Bido/Dir8:
+total 0
+
+./apple/Ed/Bido/Dir9:
+total 0
+
+./apple/Ed/BidoBuccaneer:
+total 0
+
+./apple/Ed/Dir6:
+total 0
+
+./apple/Ed/Envy:
+total 0
+
+./apple/Ed/Grumman:
+total 0
+
+./apple/Ein:
+total 16
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Lydia
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Mason
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Rio
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Wrath
+
+./apple/Ein/Lydia:
+total 0
+
+./apple/Ein/Mason:
+total 0
+
+./apple/Ein/Rio:
+total 0
+
+./apple/Ein/Wrath:
+total 0
+
+./apple/Lucy:
+total 8
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Asuka
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Gendo
+
+./apple/Lucy/Asuka:
+total 0
+
+./apple/Lucy/Gendo:
+total 0
+
+./apple/Naruto:
+total 12
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Rei
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Ryoji
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Shinji
+
+./apple/Naruto/Rei:
+total 0
+
+./apple/Naruto/Ryoji:
+total 0
+
+./apple/Naruto/Shinji:
+total 0
+
+./banana:
+total 16
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Bishop
+drwxrwxr-x 4 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Knight
+drwxrwxr-x 4 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Pawn
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Rook
+
+./banana/Bishop:
+total 0
+
+./banana/Knight:
+total 8
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 King
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Queen
+
+./banana/Knight/King:
+total 0
+
+./banana/Knight/Queen:
+total 0
+
+./banana/Pawn:
+total 8
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Checkmate
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Gambit
+-rw-rw-r-- 1 adiveglia6163 adiveglia6163    0 Oct 25  2012 Stalemate
+
+./banana/Pawn/Checkmate:
+total 0
+
+./banana/Pawn/Gambit:
+total 0
+
+./banana/Rook:
+total 0
+
+./Dir1:
+total 0
+
+./Dir2:
+total 0
+
+./Dir3:
+total 0
+
+./Dir4:
+total 0
+
+./grape:
+total 16
+drwxrwxr-x 3 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Blue
+drwxrwxr-x 4 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Brie
+drwxrwxr-x 4 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Camembert
+drwxrwxr-x 4 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Cheddar
+
+./grape/Blue:
+total 4
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Fontina
+
+./grape/Blue/Fontina:
+total 0
+
+./grape/Brie:
+total 8
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Colby
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Curds
+
+./grape/Brie/Colby:
+total 0
+
+./grape/Brie/Curds:
+total 0
+
+./grape/Camembert:
+total 8
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Feta
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Gloucester
+
+./grape/Camembert/Feta:
+total 0
+
+./grape/Camembert/Gloucester:
+total 0
+
+./grape/Cheddar:
+total 8
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Gouda
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Mascarpone
+
+./grape/Cheddar/Gouda:
+total 0
+
+./grape/Cheddar/Mascarpone:
+total 0
+
+./peach:
+total 4
+drwxrwxr-x 5 adiveglia6163 adiveglia6163 4096 Oct 25  2012 LinkToMe
+
+./peach/LinkToMe:
+total 12
+drwxrwxr-x 4 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Mozzarella
+drwxrwxr-x 3 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Parmesan
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Provolone
+
+./peach/LinkToMe/Mozzarella:
+total 8
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Ricotta
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Roquefort
+
+./peach/LinkToMe/Mozzarella/Ricotta:
+total 0
+
+./peach/LinkToMe/Mozzarella/Roquefort:
+total 0
+
+./peach/LinkToMe/Parmesan:
+total 4
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Swiss
+
+./peach/LinkToMe/Parmesan/Swiss:
+total 0
+
+./peach/LinkToMe/Provolone:
+total 0
+
+./pear:
+total 8
+drwxrwxr-x 5 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Batman
+drwxrwxr-x 4 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Superman
+
+./pear/Batman:
+total 12
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Joker
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Quinn
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Robin
+
+./pear/Batman/Joker:
+total 0
+
+./pear/Batman/Quinn:
+total 0
+
+./pear/Batman/Robin:
+total 0
+
+./pear/Superman:
+total 8
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Lex
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Lois
+
+./pear/Superman/Lex:
+total 0
+
+./pear/Superman/Lois:
+total 0
+
+./plum:
+total 12
+drwxrwxr-x 5 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Java
+drwxrwxr-x 5 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Javascript
+drwxrwxr-x 7 adiveglia6163 adiveglia6163 4096 Oct 25  2012 LISP
+
+./plum/Java:
+total 12
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Assembly
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 BASIC
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 C
+
+./plum/Java/Assembly:
+total 0
+
+./plum/Java/BASIC:
+total 0
+
+./plum/Java/C:
+total 0
+
+./plum/Javascript:
+total 12
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Fortran
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Logo
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Lua
+
+./plum/Javascript/Fortran:
+total 0
+
+./plum/Javascript/Logo:
+total 0
+
+./plum/Javascript/Lua:
+total 0
+
+./plum/LISP:
+total 20
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Pascal
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Perl
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 PHP
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Prolog
+drwxrwxr-x 6 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Ruby
+
+./plum/LISP/Pascal:
+total 0
+
+./plum/LISP/Perl:
+total 0
+
+./plum/LISP/PHP:
+total 0
+
+./plum/LISP/Prolog:
+total 0
+
+./plum/LISP/Ruby:
+total 16
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 OnRails
+drwxrwxr-x 6 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Python
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Smalltalk
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 VB
+
+./plum/LISP/Ruby/OnRails:
+total 0
+
+./plum/LISP/Ruby/Python:
+total 16
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Modula
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Pit
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 TCL
+drwxrwxr-x 4 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Whitespace
+
+./plum/LISP/Ruby/Python/Modula:
+total 0
+
+./plum/LISP/Ruby/Python/Pit:
+total 0
+
+./plum/LISP/Ruby/Python/TCL:
+total 0
+
+./plum/LISP/Ruby/Python/Whitespace:
+total 8
+drwxrwxr-x 3 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Haskell
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 Hypertalk
+
+./plum/LISP/Ruby/Python/Whitespace/Haskell:
+total 4
+drwxrwxr-x 2 adiveglia6163 adiveglia6163 4096 Oct 25  2012 ASP
+
+./plum/LISP/Ruby/Python/Whitespace/Haskell/ASP:
+total 0
+
+./plum/LISP/Ruby/Python/Whitespace/Hypertalk:
+total 0
+
+./plum/LISP/Ruby/Smalltalk:
+total 0
+
+./plum/LISP/Ruby/VB:
+total 0
+
+!!!COMMENT!!!! The output from requirements 3 and 7 of Lab 7's part 1 are
+appended back to back to each other in this txt file named SymbolicLink.txt
+!!!COMMENT!!!
+
+2. The directory structure looks like a bunch of path names of the entirty of
+the directories content.
+
+5. I called my link MySoftLink
+
+8. A softlink is pretty uch a shortcut or a direct path to a folder.
+It's useful because the user doesn't have to tree through any parent folders 
+using the cd command or key in the absolute path every time they're trying to
+access the content of a folder that's burried through multiple directories.
+It's used just like a regular directory is used. The user can cd to the 
+softlink and then ls the content for directories files to show.

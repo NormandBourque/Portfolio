@@ -1,0 +1,5 @@
+Degree of success: 100%
+Detailed description:
+Only problem seems to be the printf command trunkates large numbers.
+E-mail
+Normand_Bourque@student.uml.edu

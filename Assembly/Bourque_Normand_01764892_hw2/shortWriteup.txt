@@ -1,0 +1,6 @@
+e-Mail: Normand_Bourque@student.uml.edu
+degree of sucess: 90%
+discussion: I was unable to get my numbers to agree with the output numbers for very large numbers
+25e37 and 15e37.  I was unsure how to gernerate a inf vs nan.  I realize the numbers are to large for 
+a normal float.  Also had a problem adding a very large number to a small one.  guessing bits were pushed off
+all else was good.
